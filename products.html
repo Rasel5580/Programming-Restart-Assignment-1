@@ -64,7 +64,25 @@
         </div>
         <div id="all_products" class="grid grid-cols-1 md:grid-cols-3 gap-6 w-11/12 md:w-10/12 mx-auto mt-10">
         </div>
+
+        <div >
+            <button class="btn" onclick="my_modal_2.showModal()">open modal</button>
+    <dialog id="my_modal_2" class="modal">
+    <div class="modal-box">
+    <h3 class="text-lg font-bold">Hello!</h3>
+    <p class="py-4">Press ESC key or click outside to close</p>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+    </form>
+    </dialog>
+        </div>
     </section>
+
+    
+        <!-- Open the modal using ID.showModal() method -->
+    
+    
     
     <footer class=" bg-gray-900 text-gray-300 py-12">
         <div class="w-10/12 mx-auto">
