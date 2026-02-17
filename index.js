@@ -1,8 +1,23 @@
- <div class="card bg-base-100 w-[350px] p-3 shadow-md">
-            <a class="text-blue-500 p-3 shadow-md w-3/12 rounded-lg ml-6" href=""><i class="fa-solid fa-truck"></i></a>
-        <div class="card-body">
-            <h2 class="card-title">First Delivery</h2>
-            <p>Get your orders delivery to yours doorstep quickly and efficiently.</p>
-        <div class="card-actions justify-end">
+const catagory = () => {
+    const url = 'https://fakestoreapi.com/products/categories';
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayCatagory(data))
+}
+const displayCatagory = (buttons) => {
+    const catagory_lavel = document.getElementById('catagory_button');
+    catagory_lavel.innerHTML="";
+
+    for(let button of buttons){
+        console.log(button);
+
+        const buttonDiv = document.createElement('div');
+        buttonDiv.innerHTML = `
+        <div class="flex flex-row">
+        <button class="gap-5 btn btn-outline gap-5">${button}</button>
     </div>
-</div>
+        `
+        catagory_lavel.append(buttonDiv);
+    };
+}
+catagory();
