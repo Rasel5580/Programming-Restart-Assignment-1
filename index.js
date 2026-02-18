@@ -74,42 +74,40 @@ const displayTopRated = (products) => {
 }
 topRatedProducts();
 
-const showDetails = (id) => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-    .then(res => res.json())
-    .then(product => displayDetails(product.data))
-}
-const displayDetails = (product) => {
-    const modalContent = document.getElementById('modalContent');
-        modalContent.innerHTML = `
-            <div class="flex flex-col md:flex-row gap-6">
-                <div class="flex-1 flex justify-center items-center">
-                    <img src="${product.image}" 
-                    class="h-64 object-contain">
-                </div>
-                <div class="flex-1">
-                    <h2 class="text-xl font-bold mb-2">${product.title}</h2>
-                    <p class="text-gray-600 mb-4">${product.description}</p>
-                    <p class="text-indigo-600 font-bold text-lg mb-2">
-                        Price: $${product.price}
-                    </p>
-                    <p class="text-sm mb-2">
-                        Category: 
-                        <span class="bg-blue-200 px-2 py-1 rounded">
-                            ${product.category}
-                        </span>
-                    </p>
-                    <p class="text-sm">
-                        ⭐ ${product.rating.rate} 
-                        (${product.rating.count} reviews)
-                    </p>
-                </div>
-            </div>
-        `;
-        document.getElementById('productModal').classList.remove('hidden');
-        document.getElementById('productModal').classList.add('flex');
-    }
-showDetails(id);
+// const showDetails = (id) => {
+//     fetch(`https://fakestoreapi.com/products/${id}`)
+//     .then(res => res.json())
+//     .then(product => {
+//         const modalContent = document.getElementById('modalContent');
+//         modalContent.innerHTML = `
+//             <div class="flex flex-col md:flex-row gap-6 absolute top-24 left-24 ">
+//                 <div class="flex-1 flex justify-center items-center">
+//                     <img src="${product.image}" 
+//                     class="h-64 object-contain">
+//                 </div>
+//                 <div class="flex-1">
+//                     <h2 class="text-xl font-bold mb-2">${product.title}</h2>
+//                     <p class="text-gray-600 mb-4">${product.description}</p>
+//                     <p class="text-indigo-600 font-bold text-lg mb-2">
+//                         Price: $${product.price}
+//                     </p>
+//                     <p class="text-sm mb-2">
+//                         Category: 
+//                         <span class="bg-blue-200 px-2 py-1 rounded">
+//                             ${product.category}
+//                         </span>
+//                     </p>
+//                     <p class="text-sm">
+//                         ⭐ ${product.rating.rate} 
+//                         (${product.rating.count} reviews)
+//                     </p>
+//                 </div>
+//             </div>
+//         `;
+//         document.getElementById('productModal').classList.remove('hidden');
+//         document.getElementById('productModal').classList.add('flex');
+//     })
+// }
 
 const allProducts = () => {
     const url ='https://fakestoreapi.com/products';
