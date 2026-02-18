@@ -77,8 +77,10 @@ topRatedProducts();
 const showDetails = (id) => {
     fetch(`https://fakestoreapi.com/products/${id}`)
     .then(res => res.json())
-    .then(product => {
-        const modalContent = document.getElementById('modalContent');
+    .then(product => displayDetails(product.data))
+}
+const displayDetails = (product) => {
+    const modalContent = document.getElementById('modalContent');
         modalContent.innerHTML = `
             <div class="flex flex-col md:flex-row gap-6">
                 <div class="flex-1 flex justify-center items-center">
@@ -106,9 +108,8 @@ const showDetails = (id) => {
         `;
         document.getElementById('productModal').classList.remove('hidden');
         document.getElementById('productModal').classList.add('flex');
-    })
-}
-showDetails();
+    }
+showDetails(id);
 
 const allProducts = () => {
     const url ='https://fakestoreapi.com/products';
