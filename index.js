@@ -16,7 +16,7 @@ const displayCategory = (buttons) => {
 
     for(let button of buttons){
         console.log(button);
-        
+
         const buttonDiv = document.createElement('button');
         buttonDiv.textContent = button;       
         buttonDiv.className="gap-5 btn btn-outline rounded-full";
@@ -48,7 +48,7 @@ const displayTopRated = (products) => {
     for (let product of products) {
         const cardDiv = document.createElement('div');
         cardDiv.innerHTML = `
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col">
+            <div class="h-[400px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col">
                 <div class="h-48 flex justify-center items-center mb-4">
                     <img src="${product.image}" class="h-full object-contain" alt="${product.title}">
                 </div>
@@ -62,8 +62,8 @@ const displayTopRated = (products) => {
                 <h3 class="text-md font-semibold mb-2 line-clamp-2">${product.title}</h3>
                 <p class="text-indigo-600 font-bold text-lg mb-4">$${product.price}</p>
                 <div class="flex gap-2 mt-auto">
-                    <button onclick="showDetails('${product.id}')" class="flex-1 border px-4 py-2 font-semibold rounded-lg hover:bg-gray-100 transition"><i class="mr-1 fa-regular fa-eye"></i>Details</button>
-                    <button class="flex-1 bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+                    <button class="flex-1 border px-4 py-2 font-semibold rounded-lg hover:bg-gray-100 transition"><i class="mr-1 fa-regular fa-eye"></i>Details</button>
+                    <button onclick="showDetails('${product.id}')" class="flex-1 bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
                         <i class="fa-solid fa-cart-shopping mr-2"></i> Add
                     </button>
                 </div>
@@ -74,40 +74,38 @@ const displayTopRated = (products) => {
 }
 topRatedProducts();
 
-// const showDetails = (id) => {
-//     fetch(`https://fakestoreapi.com/products/${id}`)
-//     .then(res => res.json())
-//     .then(product => {
-//         const modalContent = document.getElementById('modalContent');
-//         modalContent.innerHTML = `
-//             <div class="flex flex-col md:flex-row gap-6 absolute top-24 left-24 ">
-//                 <div class="flex-1 flex justify-center items-center">
-//                     <img src="${product.image}" 
-//                     class="h-64 object-contain">
-//                 </div>
-//                 <div class="flex-1">
-//                     <h2 class="text-xl font-bold mb-2">${product.title}</h2>
-//                     <p class="text-gray-600 mb-4">${product.description}</p>
-//                     <p class="text-indigo-600 font-bold text-lg mb-2">
-//                         Price: $${product.price}
-//                     </p>
-//                     <p class="text-sm mb-2">
-//                         Category: 
-//                         <span class="bg-blue-200 px-2 py-1 rounded">
-//                             ${product.category}
-//                         </span>
-//                     </p>
-//                     <p class="text-sm">
-//                         ⭐ ${product.rating.rate} 
-//                         (${product.rating.count} reviews)
-//                     </p>
-//                 </div>
-//             </div>
-//         `;
-//         document.getElementById('productModal').classList.remove('hidden');
-//         document.getElementById('productModal').classList.add('flex');
-//     })
-// }
+const showDetails = (id) => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+    .then(res => res.json())
+    .then(product => displayDetails(product));
+}
+const displayDetails = (product) => {
+    const modalContent = document.getElementById('modalContent');
+    modalContent.innerHTML = `
+        <div class="h-auto bg-slate-300 p-5 rounded-xl w-6/12 mx-auto flex flex-col md:flex-row gap-5 fixed top-28 left-88 z-10">
+            <div class="flex-1 flex justify-center items-center">
+                <img src="${product.image}" class="h-64 object-contain">
+            </div>
+            <div class="flex-1">
+                <h2 class="text-xl font-bold mb-2">${product.title}</h2>
+                <p class="text-gray-600 mb-4">${product.description}</p>
+                <p class="text-indigo-600 font-bold text-lg mb-2">Price: $${product.price}</p>
+                <p class="text-sm mb-2">Category: <span class="bg-blue-200 px-2 py-1 rounded">${product.category}</span></p>
+                <p class="text-sm">⭐ ${product.rating.rate} (${product.rating.count} reviews)</p>
+            </div>
+            <button class="btn btn-sm">X</button>
+        </div>        
+    `;
+    const modal = document.getElementById('productModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+}
+
+const closeModal = () => {
+    const modal = document.getElementById('productModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}        
 
 const allProducts = () => {
     const url ='https://fakestoreapi.com/products';
@@ -123,7 +121,7 @@ const displayAllProducts = (products) => {
 console.log(product);
         const buttonDiv = document.createElement('div');
         buttonDiv.innerHTML = `
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col">
+            <div class="h-[400px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col">
                 <div class="h-48 flex justify-center items-center mb-4">
                     <img src="${product.image}" class="h-full object-contain" alt="${product.title}">
                 </div>
@@ -137,7 +135,7 @@ console.log(product);
                 <h3 class="text-md font-semibold mb-2 line-clamp-2">${product.title}</h3>
                 <p class="text-indigo-600 font-bold text-lg mb-4">$${product.price}</p>
                 <div class="flex gap-2 mt-auto">
-                    <button onclick="showDetails(${product.id})" class="flex-1 border px-4 py-2 font-semibold rounded-lg hover:bg-gray-100 transition"><i class="mr-1 fa-regular fa-eye"></i>Details</button>
+                    <button onclick="showDetails('${product.id}')" class="flex-1 border px-4 py-2 font-semibold rounded-lg hover:bg-gray-100 transition"><i class="mr-1 fa-regular fa-eye"></i>Details</button>
                     <button class="flex-1 bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
                         <i class="fa-solid fa-cart-shopping mr-2"></i> Add
                     </button>
