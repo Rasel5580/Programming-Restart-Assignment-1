@@ -16,7 +16,7 @@ const displayCategory = (buttons) => {
 
     for(let button of buttons){
         console.log(button);
-
+        
         const buttonDiv = document.createElement('button');
         buttonDiv.textContent = button;       
         buttonDiv.className="gap-5 btn btn-outline rounded-full";
@@ -143,7 +143,7 @@ console.log(product);
                     </button>
                 </div>
             </div>     
-        `
+        `;
         allProductsContainer.append(buttonDiv);
     };
 }
