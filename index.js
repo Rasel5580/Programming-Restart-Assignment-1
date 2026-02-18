@@ -62,7 +62,7 @@ const displayTopRated = (products) => {
                 <h3 class="text-md font-semibold mb-2 line-clamp-2">${product.title}</h3>
                 <p class="text-indigo-600 font-bold text-lg mb-4">$${product.price}</p>
                 <div class="flex gap-2 mt-auto">
-                    <button onclick="showDetails(${product.id})" class="flex-1 border px-4 py-2 font-semibold rounded-lg hover:bg-gray-100 transition"><i class="mr-1 fa-regular fa-eye"></i>Details</button>
+                    <button onclick="showDetails('${product.id}')" class="flex-1 border px-4 py-2 font-semibold rounded-lg hover:bg-gray-100 transition"><i class="mr-1 fa-regular fa-eye"></i>Details</button>
                     <button class="flex-1 bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
                         <i class="fa-solid fa-cart-shopping mr-2"></i> Add
                     </button>
@@ -108,6 +108,7 @@ const showDetails = (id) => {
         document.getElementById('productModal').classList.add('flex');
     })
 }
+showDetails();
 
 const allProducts = () => {
     const url ='https://fakestoreapi.com/products';
