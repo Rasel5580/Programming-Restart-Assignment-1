@@ -1,53 +1,53 @@
 const category = () => {
-    const url = 'https://fakestoreapi.com/products/categories';
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayCategory(data))
-}
+  const url = "https://fakestoreapi.com/products/categories";
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayCategory(data));
+};
 const displayCategory = (buttons) => {
-    const category_level = document.getElementById('category_button');
-    category_level.innerHTML="";
+  const category_level = document.getElementById("category_button");
+  category_level.innerHTML = "";
 
-    const allButton = document.createElement('button');
-    allButton.textContent = "All";
-    allButton.className = "btn btn-outline btn-md rounded-full";
-    allButton.onclick = () => allProducts(); 
-    category_level.appendChild(allButton);
+  const allButton = document.createElement("button");
+  allButton.textContent = "All";
+  allButton.className = "btn btn-outline btn-md rounded-full";
+  allButton.onclick = () => allProducts();
+  category_level.appendChild(allButton);
 
-    for(let button of buttons){
-        console.log(button);
+  for (let button of buttons) {
+    console.log(button);
 
-        const buttonDiv = document.createElement('button');
-        buttonDiv.textContent = button;       
-        buttonDiv.className="gap-5 btn btn-outline rounded-full";
-        buttonDiv.onclick = () => checkCategory(button);
-        category_level.append(buttonDiv);
-    };
-}
+    const buttonDiv = document.createElement("button");
+    buttonDiv.textContent = button;
+    buttonDiv.className = "gap-5 btn btn-outline rounded-full";
+    buttonDiv.onclick = () => checkCategory(button);
+    category_level.append(buttonDiv);
+  }
+};
 category();
 
 const checkCategory = (category) => {
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
-    .then(res => res.json())
-    .then(data => displayAllProducts(data))
-}
+  fetch(`https://fakestoreapi.com/products/category/${category}`)
+    .then((res) => res.json())
+    .then((data) => displayAllProducts(data));
+};
 
 const topRatedProducts = () => {
-    fetch('https://fakestoreapi.com/products')
-        .then(res => res.json())
-        .then(data => {
-            const sortedProducts = data.sort((a, b) => b.rating.rate - a.rating.rate);
-            const top3 = sortedProducts.slice(0, 3);
-            displayTopRated(top3);
-        });
-}
+  fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((data) => {
+      const sortedProducts = data.sort((a, b) => b.rating.rate - a.rating.rate);
+      const top3 = sortedProducts.slice(0, 3);
+      displayTopRated(top3);
+    });
+};
 const displayTopRated = (products) => {
-    const container = document.getElementById('topRatedProducts');
-    container.innerHTML = "";
+  const container = document.getElementById("topRatedProducts");
+  container.innerHTML = "";
 
-    for (let product of products) {
-        const cardDiv = document.createElement('div');
-        cardDiv.innerHTML = `
+  for (let product of products) {
+    const cardDiv = document.createElement("div");
+    cardDiv.innerHTML = `
             <div class="h-[400px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col">
                 <div class="h-48 flex justify-center items-center mb-4">
                     <img src="${product.image}" class="h-full object-contain" alt="${product.title}">
@@ -69,19 +69,19 @@ const displayTopRated = (products) => {
                 </div>
             </div>
         `;
-        container.append(cardDiv);
-    }
-}
+    container.append(cardDiv);
+  }
+};
 topRatedProducts();
 
 const showDetails = (id) => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-    .then(res => res.json())
-    .then(product => displayDetails(product));
-}
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => res.json())
+    .then((product) => displayDetails(product));
+};
 const displayDetails = (product) => {
-    const modalContent = document.getElementById('modalContent');
-    modalContent.innerHTML = `
+  const modalContent = document.getElementById("modalContent");
+  modalContent.innerHTML = `
         <div class="h-auto bg-slate-300 p-5 rounded-xl w-6/12 mx-auto flex flex-col md:flex-row gap-5 fixed top-28 left-88 z-10">
             <div class="flex-1 flex justify-center items-center">
                 <img src="${product.image}" class="h-64 object-contain">
@@ -96,31 +96,31 @@ const displayDetails = (product) => {
             <button class="btn btn-sm">X</button>
         </div>        
     `;
-    const modal = document.getElementById('productModal');
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-}
+  const modal = document.getElementById("productModal");
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+};
 
 const closeModal = () => {
-    const modal = document.getElementById('productModal');
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-}        
+  const modal = document.getElementById("productModal");
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+};
 
 const allProducts = () => {
-    const url ='https://fakestoreapi.com/products';
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayAllProducts(data))
-}
+  const url = "https://fakestoreapi.com/products";
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayAllProducts(data));
+};
 const displayAllProducts = (products) => {
-    const allProductsContainer = document.getElementById('all_products');
-    allProductsContainer.innerHTML = "";
+  const allProductsContainer = document.getElementById("all_products");
+  allProductsContainer.innerHTML = "";
 
-    for(let product of products){
-console.log(product);
-        const buttonDiv = document.createElement('div');
-        buttonDiv.innerHTML = `
+  for (let product of products) {
+    console.log(product);
+    const buttonDiv = document.createElement("div");
+    buttonDiv.innerHTML = `
             <div class="h-[400px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col">
                 <div class="h-48 flex justify-center items-center mb-4">
                     <img src="${product.image}" class="h-full object-contain" alt="${product.title}">
@@ -142,7 +142,7 @@ console.log(product);
                 </div>
             </div>     
         `;
-        allProductsContainer.append(buttonDiv);
-    };
-}
+    allProductsContainer.append(buttonDiv);
+  }
+};
 allProducts();

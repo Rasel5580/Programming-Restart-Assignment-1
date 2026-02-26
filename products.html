@@ -1,128 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
-    
+
     <!-- FontAwsam -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Icon -->
-    <link rel="shortcut icon" href="./english-janala-resources-main/assets/logo.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./english-janala-resources-main/assets/logo.png"
+      type="image/x-icon"
+    />
 
     <!-- tailwind + daisy -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Font intrigation -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- style css -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <nav class="fixed top-0 left-0 w-full z-10 bg-slate-100">
-            <div class="flex justify-between w-11/12 md:w-10/12 mx-auto items-center">
-            <div>
-                <h1 class="text-2xl font-bold my-3 text-blue-500">SwiftCard</h1>
-            </div>
-            <div>
-                <ul class="hidden md:flex gap-5 my-3 font-semibold items-center opacity-80">
-                    <li>
-                        <a class="" href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="products.html">Products</a>
-                    </li>
-                    <li> <a href="">About</a></li>
-                    <li>
-                        <a href="">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="items-center space-x-3">
-                <a href=""><i class="fa-solid fa-cart-shopping my-3"></i></a>
+      <nav class="fixed top-0 left-0 w-full z-10 bg-slate-100">
+        <div
+          class="flex justify-between w-11/12 md:w-10/12 mx-auto items-center"
+        >
+          <div>
+            <h1 class="text-2xl font-bold my-3 text-blue-500">SwiftCard</h1>
+          </div>
+          <div>
+            <ul
+              class="hidden md:flex gap-5 my-3 font-semibold items-center opacity-80"
+            >
+              <li>
+                <a class="" href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="products.html">Products</a>
+              </li>
+              <li><a href="">About</a></li>
+              <li>
+                <a href="">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="items-center space-x-3">
+            <a href=""><i class="fa-solid fa-cart-shopping my-3"></i></a>
             <div class="dropdown dropdown-center md:hidden">
-            <div tabindex="0" role="button" class="btn m-1"><a href=""><i class="fa-solid fa-bars"></i></a> </div>
-                <ul tabindex="-1" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a></a>Products</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Contact</a></li>
-                </ul>
+              <div tabindex="0" role="button" class="btn m-1">
+                <a href=""><i class="fa-solid fa-bars"></i></a>
+              </div>
+              <ul
+                tabindex="-1"
+                class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              >
+                <li><a>Products</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
+              </ul>
             </div>
-            </div>
+          </div>
         </div>
-        </nav> 
+      </nav>
     </header>
     <section class="mb-5">
-        <h2 class="text-2xl font-bold text-center my-5 mt-5">Our Products</h2>
-        <div id="category_button" 
-        class="flex flex-wrap gap-5 mt-5 items-center justify-center mx-auto">
-        </div>
-        <div id="all_products" 
-        class="grid grid-cols-1 md:grid-cols-3 gap-6 w-11/12 md:w-10/12 mx-auto mt-10">
-        </div>
-        <div id="modalContent"
-        class="">
-        </div>
+      <h2 class="text-2xl font-bold text-center my-5 mt-5">Our Products</h2>
+      <div
+        id="category_button"
+        class="flex flex-wrap gap-5 mt-5 items-center justify-center mx-auto"
+      ></div>
+      <div
+        id="all_products"
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 w-11/12 md:w-10/12 mx-auto mt-10"
+      ></div>
+      <div id="modalContent" class=""></div>
     </section>
-    
-    <footer class=" bg-gray-900 text-gray-300 py-12">
-        <div class="w-10/12 mx-auto">
-              <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
 
-      <div>
-        <h2 class="text-xl font-bold text-white mb-4">SwiftCart</h2>
-        <p class="text-sm">
-          Your one-stop shop for fashion and lifestyle needs.
-        </p>
-      </div>
+    <footer class="bg-gray-900 text-gray-300 py-12">
+      <div class="w-10/12 mx-auto">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+          <div>
+            <h2 class="text-xl font-bold text-white mb-4">SwiftCart</h2>
+            <p class="text-sm">
+              Your one-stop shop for fashion and lifestyle needs.
+            </p>
+          </div>
 
-      <div>
-        <h3 class="text-white font-semibold mb-4">Quick Links</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
 
-      <div>
-        <h3 class="text-white font-semibold mb-4">Support</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Support</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
 
-      <div>
-        <h3 class="text-white font-semibold mb-4">Newsletter</h3>
-        <div class="flex">
-          <input type="email" placeholder="Enter your email"
-            class="px-3 py-2 rounded-l-lg w-full text-gray-800">
-          <button class="bg-indigo-600 px-4 py-2 rounded-r-lg text-white hover:bg-indigo-700">
-            Subscribe
-          </button>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Newsletter</h3>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="px-3 py-2 rounded-l-lg w-full text-gray-800"
+              />
+              <button
+                class="bg-indigo-600 px-4 py-2 rounded-r-lg text-white hover:bg-indigo-700"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-sm mt-10 text-gray-500">
+          © 2025 SwiftCart. All rights reserved.
         </div>
       </div>
-    </div>
-    <div class="text-center text-sm mt-10 text-gray-500">
-      © 2025 SwiftCart. All rights reserved.
-    </div>
-        </div>
     </footer>
 
     <script src="index.js
     "></script>
     <script src="products.js
     "></script>
-</body>
+  </body>
 </html>
